@@ -3,7 +3,7 @@
 > From Digital Elegance to a Global Resonance Network
 
 **Repository:** Crazy-Chimera/phi  
-**Author:** Michael Chodounský (MikeArgot)  
+**Author:** Michael Chodounský 
 **Version:** 1.0.0  
 **Status:** Architecture & Research Roadmap
 
