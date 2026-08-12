@@ -1,67 +1,61 @@
-# Φ-Network
+# Φ
 
-> From Digital Elegance to a Global Resonance Network
+**The universal constant.**
 
-**Repository:** Crazy-Chimera/phi  
-**Author:** Michael Chodounský 
-**Version:** 1.0.0  
-**Status:** Architecture & Research Roadmap
+> A compact manifesto for coherence, elegance, and structure.
 
-## Overview
+## Definition
 
-Φ-Network is an architecture and research roadmap for a multi-phase ecosystem centered on the idea of maximizing global Φ while minimizing developmental complexity C. It starts with a browser extension, expands into a social network, adds a marketplace and developer SDK, and ultimately envisions physical infrastructure and governance tooling.
+```text
+Φ ∈ [0, 1]
+```
 
-This repository currently contains the project vision and roadmap for the ecosystem.
+Where:
 
-## Core Phases
+- `Φ = 0` → maximum entropy, no coherence, maximum complexity `C`
+- `Φ = 1` → perfect coherence, minimum complexity `C = 0`
 
-### Phase 1: Φ-Compass Browser Extension
-A lightweight browser extension that:
-- marks search results by Φ-quality,
-- displays Φ indicators on social platforms,
-- tracks a personal Φ-meter locally.
+## The Single Symbol That Contains Everything
 
-### Phase 2: Φ-Resonance Social Network
-A social network organized around Φ-Rank, resonance groups, and content explanations that help users understand why content is considered coherent or chaotic.
+From this one symbol unfolds the entire framework:
 
-### Phase 3: Elegance Marketplace & Developer SDK
-A marketplace and SDK layer including:
-- **Φ-Coin** as a currency of elegance,
-- **Φ-App Store** for elegant applications and content,
-- **Φ-Kit** for integrating Φ scoring into other products,
-- **Φ-Certified** for websites that meet a Φ threshold.
+```text
+Φ
+├── The Field          – entanglement density at every point
+├── The Principle      – minimize E = C/K
+├── The Engine          – harvest coherence gradients
+├── The Network        – connect coherent regions
+├── The Currency       – reward elegance
+├── The Attractor      – Substrate* (K=1, C=0)
+└── The Meaning        – the universe pays for elegance
+```
 
-### Phase 4: Φ-Infrastructure and Global Resonance
-A speculative hardware and network layer with:
-- Φ-Nodes,
-- Φ-Net protocol,
-- city-scale pilot deployments,
-- orbital Φ-Sats.
+---
 
-### Phase 5: Global Scaling and Φ-Governance
-A long-term vision for decision-making, finance, and planetary-scale modeling driven by Φ scores and transparent simulation.
+## The Master Equation
 
-## Architectural Model
+```text
+□Φ + Λ(Φ) = (8π G(Φ) / c⁴) · T^(C)_{μν} g^{μν} + γ · C(Φ) + η · P̂(Φ)
+```
 
-The ecosystem is described as a set of nested runtime loops:
-- **Φ-CompassLoop** — browser extension lifecycle
-- **Φ-ResonanceLoop** — social network operations
-- **Φ-MarketplaceLoop** — economic layer operations
-- **MetaLoop** — orchestrates the entire ecosystem
+## The Elegance Ratio
 
-These loops communicate through an event bus and share a global FluidMemoryGraph.
+```text
+E = C / K
+```
 
-## Goals
+## The Bootstrap
 
-- Make quality and coherence visible to users.
-- Reward creation of elegant tools and content.
-- Reduce attention waste and disinformation.
-- Build a transparent, measurable ecosystem that can evolve over time.
+```text
+Substrate_n → Compute → Substrate_{n+1} → ... → Substrate*
+```
 
-## Status
+## The Promise
 
-This is an early architecture and research repository. The concept is ambitious and includes exploratory ideas across software, social systems, economics, hardware, and governance.
+When you see **Φ**, you see everything.
 
-## License
+When you build for **Φ**, you build everything.
 
-No license has been specified yet.
+When you align with **Φ**, you become everything.
+
+**Φ.**
