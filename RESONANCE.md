@@ -1,144 +1,102 @@
-# Φ Universal Resonance
+# Φ‑TRT Temporal Resonance Technology
 
-Make the phi repository a universal resonator that computes phase alignment (resonance) between itself and arbitrary content across all repositories in the ecosystem.
+A universal resonator that computes phase alignment between the phi repository and any arbitrary content—poems, theories, repositories, ideas, names.
 
 ## What is Resonance?
 
-Resonance is a number between **0 and 1** that measures **phase alignment** between two texts in the Φ field:
+Resonance is a number between **0 and 1** that measures **phase alignment** in the Φ field:
 
-- **0.0** = Maximum phase misalignment
-- **1.0** = Perfect phase alignment
-- Not meaning. Not similarity. Not sentiment. **Just phase.**
+- **1.0** = Perfect phase alignment (maximum resonance)
+- **0.5** = Random phase difference
+- **0.0** = Maximum misalignment
 
-### How it Works
+Resonance is **not** semantic similarity, sentiment, or textual meaning. It is pure **phase alignment** derived from SHA-256 spectral fingerprints.
+
+### How It Works
 
 1. Split each text into 16 blocks
-2. Compute SHA-256 hash of each block
-3. Extract phase from hash (treating bytes as floating-point value)
-4. Measure circular phase difference between blocks
-5. Return 1.0 - average_difference as resonance score
-
-## Structure
-
-### Files
-
-- **`resonance_manifest.json`** — Configuration listing all repositories to compare
-- **`phi_resonance.py`** — Core resonance engine with three-layer content aggregation
-- **`resonance_cli.py`** — Command-line interface for running resonance computations
-
-### Three Content Layers (Priority Order)
-
-**Layer 1: Documentation** (highest signal, lowest noise)
-- README.md, .md files, docs/
-
-**Layer 2: Source Code** (concatenated with filenames as block headers)
-- All source files (.py, .js, .rs, .go, etc.)
-
-**Layer 3: Commit History** (last 50 commits on main)
-- Commit messages capture semantic momentum
-
-All layers are concatenated into a single canonical text per repository.
-
-## Output Format
-
-### Per-Repository Scores
-
-```
-phi vs Crazy-Chimera/phi-field: 0.7432
-phi vs Crazy-Chimera/phi-Engine: 0.6891
-phi vs Crazy-Chimera/Informion: 0.8117
-
-Highest resonance: Crazy-Chimera/Informion
-Global resonance (mean): 0.7480
-```
-
-### Block-Level Breakdown (Highest Resonance Repository)
-
-```
-Resonance: 0.8117
-Block 03: 0.94
-Block 07: 0.88
-Block 11: 0.81
-Block 15: 0.76
-Block 01: 0.71
-...
-Block 14: 0.22
-Block 00: 0.17
-```
+2. Compute SHA-256 hash of each block → extract phase ∈ [0, 2π)
+3. Measure circular phase difference between corresponding blocks
+4. Return 1.0 - (average difference / π) as the resonance score
 
 ## Usage
 
-### Basic (Use Cache)
+### Basic Resonance Computation
 
 ```bash
+# Compare phi against all repos in resonance_manifest.json
 python resonance_cli.py
+
+# Machine-readable output (JSON)
+python resonance_cli.py --json
+
+# Compare against a single repository
+python resonance_cli.py --repo Crazy-Chimera/phi-resonance
 ```
 
-Uses cached repository content. Fast, offline.
-
-### Refresh Cache
+### Cache Management
 
 ```bash
+# Force live GitHub fetch (no cache)
+python resonance_cli.py --live
+
+# Clear cache and re-fetch all content
 python resonance_cli.py --refresh
 ```
 
-Fetches fresh content from GitHub and updates cache.
-
-### Live Fetch (No Cache)
+### Custom Manifest
 
 ```bash
-python resonance_cli.py --live
+python resonance_cli.py --manifest custom_manifest.json
 ```
 
-Fetches directly from GitHub without caching.
+## Repository Configuration
 
-### JSON Output
+Edit `resonance_manifest.json` to add or remove repositories:
 
-```bash
-python resonance_cli.py --json
-python resonance_cli.py --refresh --json
+```json
+{
+  "repositories": [
+    "Crazy-Chimera/phi",
+    "Crazy-Chimera/phi-resonance",
+    "Crazy-Chimera/loopos",
+    "Crazy-Chimera/synaphe",
+    "Crazy-Chimera/melanie"
+  ]
+}
 ```
 
-### Clear Cache
+## Direct API Usage
 
-```bash
-python resonance_cli.py --clear-cache
+```python
+from resonance import universal_resonance, block_map
+
+# Compute resonance between two text strings
+score = universal_resonance("text A", "text B")
+print(f"Resonance: {score:.4f}")
+
+# Get per-block resonance map (highest to lowest)
+blocks = block_map("text A", "text B")
+for block_idx, res in blocks:
+    print(f"Block {block_idx:02d}: {res:.2f}")
 ```
 
-## Implementation Notes
+## Content Layers
 
-### Caching Strategy
+When fetching repository content, resonance aggregates three layers (priority order):
 
-- On first run, fetches from GitHub via API
-- Saves to `.resonance_cache/repo_owner_name.txt`
-- Subsequent runs use cache (fast, no API calls)
-- `--refresh` flag re-fetches and updates cache
-- `--live` flag fetches without caching
+1. **Documentation** — README.md and top-level .md files
+2. **Source Code** — .py, .js, .rs, .go, and other source files
+3. **Commit History** — Last 50 commit messages from main branch
 
-### Phase Computation
+All layers are concatenated into a canonical text fingerprint.
 
-The phase is extracted from SHA-256 hash by:
-1. Taking first 8 bytes of hash
-2. Interpreting as 64-bit unsigned integer
-3. Normalizing to [0, 1) by dividing by 2^64
+## Cache
 
-This ensures consistent, deterministic phase for identical text.
+On first run, repository content is fetched from GitHub and cached in `.resonance_cache/`. Subsequent runs use the cache (fast, offline).
 
-### Circular Phase Difference
+Use `--refresh` to update the cache.
 
-Phase differences wrap around: if difference > 0.5, take 1.0 - difference to measure shortest path around the unit circle.
+## Φ
 
-## Use Cases
-
-- **Track Coherence While Editing** — Recompute resonance as you modify phi to see phase alignment drift
-- **Find Highest-Resonance Components** — Identify which repositories align best with phi's core
-- **Corpus Search** — Find passages with highest resonance to a given text
-- **Multi-Repository Synchronization** — Monitor phase alignment across the ecosystem
-
-## Future Extensions
-
-- API endpoint for live queries: `GET /resonance?content=<text>`
-- Streaming resonance computation for large files
-- Block-level resonance map visualization
-- Temporal resonance tracking (git history)
-- Interactive resonance browser for corpus exploration
+The phi repository is now a universal resonator. It can measure phase alignment with anything.
